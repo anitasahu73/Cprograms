@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+
+int ar[100001];
+long long int amount,temp;
+int main()
+{
+	int t,n,k,i,j,diff;
+	scanf("%d",&t);
+	
+	while(t--)
+	{
+		scanf("%d",&n);
+		scanf("%d",&k);
+		amount = 0;
+		for(i=0;i<n;i++)
+		{
+			scanf("%d",&ar[i]);
+		}
+		
+		for(i=0;i<n;i++)
+		{	
+			for(j=i+1;j<n;j++)
+				{
+				
+				diff = abs(ar[i] - ar[j] );
+				temp = pow(diff,k);
+				
+					amount = (amount + (temp*2))%1000000007 ;
+				}
+		}		
+		printf("%d\n",amount);
+	}
+return 0;	
+}
